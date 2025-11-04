@@ -1,0 +1,84 @@
+---
+layout: default
+title: "Pagina niet gevonden"
+description: "De pagina die u zoekt bestaat niet"
+---
+
+<div class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <h1 class="error-title">404</h1>
+            <h2 class="error-subtitle">Pagina niet gevonden</h2>
+            <p class="error-description">
+                Sorry, de pagina die u zoekt bestaat niet of is verplaatst.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn btn--primary">
+                    <i class="fas fa-home"></i>
+                    Terug naar home
+                </a>
+                <a href="/contact/" class="btn btn--secondary">
+                    <i class="fas fa-envelope"></i>
+                    Neem contact op
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) 0;
+}
+
+.error-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.error-title {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    line-height: 1;
+}
+
+.error-subtitle {
+    font-size: var(--font-size-3xl);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.error-description {
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-2xl);
+    line-height: 1.6;
+}
+
+.error-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .error-title {
+        font-size: 6rem;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+
+

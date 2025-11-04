@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Brassband Eensgezindheid Wormer",
+      "alternateName": "Brassband Eensgezindheid",
+      "genre": "Brass Band Music",
+      "foundingDate": "1900",
+      "description": "Een dynamische en veelzijdige brassband uit Wormer met een rijke geschiedenis van meer dan 120 jaar",
+      "url": "{{ site.url }}",
+      "sameAs": [
+        "https://www.facebook.com/brassbandeensgezinheid.wormer"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Zandweg 19",
+        "postalCode": "1531 AJ",
+        "addressLocality": "Wormer",
+        "addressCountry": "NL"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Repetitielokaal Brassband Eensgezindheid",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Zandweg 19",
+          "postalCode": "1531 AJ",
+          "addressLocality": "Wormer",
+          "addressCountry": "NL"
+        }
+      },
+      "member": {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Gertjan Loot"
+        },
+        "roleName": "Dirigent",
+        "startDate": "2013"
+      }
+    }
+    </script>
+
+    {% seo %}
+    {% feed_meta %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="navbar__brand">
+                    <a href="{{ '/' | relative_url }}" class="navbar__logo">
+                        <span class="navbar__logo-text">Brassband Eensgezindheid</span>
+                        <span class="navbar__logo-subtitle">Wormer</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="navbar__nav">
+                    {% for item in site.navigation %}
+                    <a href="{{ item.url | relative_url }}" class="navbar__link {% if page.url == item.url %}navbar__link--active{% endif %}">
+                        {{ item.title }}
+                    </a>
+                    {% endfor %}
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="navbar__toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span class="navbar__hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="mobile-nav__overlay" id="mobile-nav-overlay"></div>
+                <div class="mobile-nav__menu">
+                    <div class="mobile-nav__header">
+                        <div class="mobile-nav__logo">
+                            <span class="mobile-nav__logo-text">Brassband Eensgezindheid</span>
+                            <span class="mobile-nav__logo-subtitle">Wormer</span>
+                        </div>
+                        <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Close mobile menu">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="mobile-nav__links">
+                        {% for item in site.navigation %}
+                        <a href="{{ item.url | relative_url }}" class="mobile-nav__link {% if page.url == item.url %}mobile-nav__link--active{% endif %}">
+                            {{ item.title }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Brassband Eensgezindheid</h3>
+                    <p class="footer__description">
+                        Een dynamische en veelzijdige brassband uit Wormer. Opgericht in 1900, meer dan 120 jaar muzikale traditie.
+                    </p>
+                    <a href="/over-ons/" class="footer__link">Lees meer over ons →</a>
+                </div>
+
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Contact</h4>
+                    <p class="footer__text">
+                        Zandweg 19<br>
+                        1531 AJ Wormer<br>
+                        Nederland
+                    </p>
+                    <p class="footer__text">
+                        <a href="mailto:info@bbewormer.nl" class="footer__link">info@bbewormer.nl</a><br>
+                        <a href="tel:0650848438" class="footer__link">06 508 484 38</a>
+                    </p>
+                    <p class="footer__text">
+                        <strong>Repetitie:</strong> Donderdag 20:00-22:30
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Snelle Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="/agenda/" class="footer__link">Agenda</a></li>
+                        <li><a href="/fotos/" class="footer__link">Foto's</a></li>
+                        <li><a href="/lid-worden/" class="footer__link">Lid Worden</a></li>
+                        <li><a href="/contact/#sponsoring" class="footer__link">Sponsormogelijkheden</a></li>
+                        <li><a href="/over-ons/#dirigent" class="footer__link">Dirigent</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Volg Ons</h4>
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/brassbandeensgezinheid.wormer" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <p class="footer__text" style="margin-top: 1rem;">
+                        <a href="http://www.sponsorkliks.com/products/shops.php?club=10&cn=nl&ln=nl" class="footer__link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-heart"></i> Sponsor via SponsorKliks
+                        </a>
+                    </p>
+                    <div class="footer__newsletter">
+                        <p class="footer__text"><strong>Nieuwsbrief:</strong></p>
+                        <a href="/contact/#newsletter" class="footer__link">Schrijf je in →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    &copy; {{ 'now' | date: "%Y" }} Brassband Eensgezindheid Wormer. Alle rechten voorbehouden.
+                </p>
+                <p class="footer__copy">
+                    <a href="/privacy/" class="footer__link">Privacybeleid</a> •
+                    Donaties: NL80 RABO 0374 9042 94
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- JavaScript -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+# Site settings
+title: "Brassband Eensgezindheid Wormer"
+description: "Een dynamische en veelzijdige brassband uit Wormer met een rijke geschiedenis van meer dan 120 jaar"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://bbewormer.stor.dev" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  members:
+    output: true
+    permalink: /:collection/:name/
+  events:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: "member"
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Social media
+twitter_username: bbewormer
+github_username: bbewormer
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Over Ons"
+    url: "/over-ons/"
+  - title: "Agenda"
+    url: "/agenda/"
+  - title: "Foto's"
+    url: "/fotos/"
+  - title: "Nieuws"
+    url: "/nieuws/"
+  - title: "Lid Worden"
+    url: "/lid-worden/"
+  - title: "Contact"
+    url: "/contact/"
+
+
